@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <title>ZLEVORA</title>
 
@@ -11,49 +10,71 @@ body{
 margin:0;
 font-family:Arial;
 background:#efe7df;
-color:#5a4f46;
-text-align:center;
+color:#4b4037;
 }
 
+/* welcome screen */
+
 #welcome{
+
 position:fixed;
 width:100%;
 height:100%;
 background:#efe7df;
+
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
-font-size:35px;
+flex-direction:column;
+
+font-size:32px;
+letter-spacing:2px;
+
 }
+
+/* app */
 
 #app{
 display:none;
-padding:20px;
+padding:25px;
 }
 
-.logo{
-font-size:40px;
-margin-bottom:10px;
+.title{
+
+text-align:center;
+font-size:28px;
+margin-bottom:20px;
+
 }
+
+/* grid */
 
 .grid{
 
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:15px;
-margin-top:20px;
 
 }
+
+/* cards */
 
 .card{
 
 background:white;
+border-radius:20px;
 padding:20px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+box-shadow:0 5px 25px rgba(0,0,0,0.1);
 
 }
+
+.card h3{
+
+margin-top:0;
+
+}
+
+/* button */
 
 button{
 
@@ -61,10 +82,11 @@ padding:12px;
 border:none;
 background:#cbb8a5;
 border-radius:10px;
-margin-top:10px;
 cursor:pointer;
 
 }
+
+/* section */
 
 .section{
 
@@ -73,27 +95,33 @@ margin-top:20px;
 
 }
 
+/* input */
+
+input{
+
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+
+}
+
 </style>
 
 </head>
 
-
 <body>
-
 
 <div id="welcome">
 
-<div class="logo">ZLEVORA</div>
+<h1>ZLEVORA</h1>
 <p>Smart Family Ecosystem</p>
 
 </div>
 
 
-
 <div id="app">
 
-<h1>ZLEVORA</h1>
-
+<div class="title">ZLEVORA Dashboard</div>
 
 <div class="grid">
 
@@ -101,75 +129,84 @@ margin-top:20px;
 
 <h3>Mother</h3>
 
+<p>Mother care system</p>
+
 <button onclick="openPage('mother')">Open</button>
 
 </div>
-
 
 
 <div class="card">
 
 <h3>Pregnancy</h3>
 
+<p>Pregnancy progress</p>
+
 <button onclick="openPage('pregnancy')">Open</button>
 
 </div>
-
 
 
 <div class="card">
 
 <h3>Postpartum</h3>
 
+<p>Recovery system</p>
+
 <button onclick="openPage('postpartum')">Open</button>
 
 </div>
-
 
 
 <div class="card">
 
 <h3>Breastfeeding</h3>
 
+<p>Milk tracking</p>
+
 <button onclick="openPage('breast')">Open</button>
 
 </div>
-
 
 
 <div class="card">
 
 <h3>Mental Health</h3>
 
+<p>Stress support</p>
+
 <button onclick="openPage('mental')">Open</button>
 
 </div>
-
 
 
 <div class="card">
 
 <h3>Baby</h3>
 
+<p>Baby tracking</p>
+
 <button onclick="openPage('baby')">Open</button>
 
 </div>
-
 
 
 <div class="card">
 
 <h3>AI Assistant</h3>
 
+<p>Smart help system</p>
+
 <button onclick="openPage('ai')">Open</button>
 
 </div>
 
 
-
 <div class="card">
 
 <h3>Smart Shop</h3>
+
+<p>ZLEVORA products</p>
 
 <button onclick="openPage('shop')">Open</button>
 
@@ -178,14 +215,12 @@ margin-top:20px;
 </div>
 
 
-
 <div id="mother" class="section">
 
-<h2>Mother Section</h2>
+<h2>Mother Care</h2>
 
-<p>Pregnancy tips</p>
-
-<p>Health support</p>
+<p>Pregnancy health tips</p>
+<p>Nutrition support</p>
 
 <button onclick="back()">Back</button>
 
@@ -198,11 +233,8 @@ margin-top:20px;
 <h2>Pregnancy Progress</h2>
 
 <p>Week 1</p>
-
 <p>Week 2</p>
-
 <p>Week 3</p>
-
 <p>Week 4</p>
 
 <button onclick="back()">Back</button>
@@ -215,11 +247,8 @@ margin-top:20px;
 
 <h2>Postpartum Care</h2>
 
-<p>Recovery</p>
-
-<p>Sleep</p>
-
-<p>Nutrition</p>
+<p>Sleep recovery</p>
+<p>Body healing</p>
 
 <button onclick="back()">Back</button>
 
@@ -232,7 +261,6 @@ margin-top:20px;
 <h2>Breastfeeding</h2>
 
 <p>Milk supply</p>
-
 <p>Pumping</p>
 
 <button onclick="back()">Back</button>
@@ -245,9 +273,8 @@ margin-top:20px;
 
 <h2>Mental Health</h2>
 
-<p>Stress support</p>
-
-<p>Emotional health</p>
+<p>Stress help</p>
+<p>Emotional support</p>
 
 <button onclick="back()">Back</button>
 
@@ -259,10 +286,8 @@ margin-top:20px;
 
 <h2>Baby Tracking</h2>
 
-<p>Sleep</p>
-
-<p>Growth</p>
-
+<p>Sleep tracking</p>
+<p>Growth tracking</p>
 <p>Vaccines</p>
 
 <button onclick="back()">Back</button>
@@ -275,7 +300,7 @@ margin-top:20px;
 
 <h2>AI Assistant</h2>
 
-<input id="question" placeholder="Ask something">
+<input id="q" placeholder="Ask question">
 
 <button onclick="askAI()">Ask</button>
 
@@ -300,9 +325,7 @@ margin-top:20px;
 </div>
 
 
-
 </div>
-
 
 
 <script>
@@ -315,7 +338,6 @@ document.getElementById("welcome").style.display="none"
 document.getElementById("app").style.display="block"
 
 },2000)
-
 
 
 function openPage(page){
@@ -333,7 +355,6 @@ document.getElementById(page).style.display="block"
 }
 
 
-
 function back(){
 
 var s=document.getElementsByClassName("section")
@@ -347,10 +368,9 @@ s[i].style.display="none"
 }
 
 
-
 function askAI(){
 
-var q=document.getElementById("question").value
+var q=document.getElementById("q").value
 
 document.getElementById("answer").innerText="AI analysing: "+q
 
@@ -358,7 +378,6 @@ document.getElementById("answer").innerText="AI analysing: "+q
 
 
 </script>
-
 
 </body>
 </html>
