@@ -1,436 +1,364 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZLEVORA</title>
-  <meta name="description" content="ZLEVORA Smart Family Ecosystem" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+
+<meta charset="UTF-8">
+<title>ZLEVORA</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#efe7df;
+color:#5a4f46;
+text-align:center;
+}
+
+#welcome{
+position:fixed;
+width:100%;
+height:100%;
+background:#efe7df;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:35px;
+}
+
+#app{
+display:none;
+padding:20px;
+}
+
+.logo{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:20px;
+
+}
+
+.card{
+
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+button{
+
+padding:12px;
+border:none;
+background:#cbb8a5;
+border-radius:10px;
+margin-top:10px;
+cursor:pointer;
+
+}
+
+.section{
+
+display:none;
+margin-top:20px;
+
+}
+
+</style>
+
 </head>
 
+
 <body>
-  <!-- SPLASH -->
-  <div id="splash" class="splash">
-    <div class="splash__glass">
-      <div class="splash__mark">
-        <div class="mark__halo"></div>
-        <div class="mark__disc">Z</div>
-      </div>
-      <div class="splash__title">Welcome to <span class="brand">ZLEVORA</span></div>
-      <div class="splash__sub">Smart Family Ecosystem</div>
-      <div class="splash__dots" aria-label="Loading"><span></span><span></span><span></span></div>
-    </div>
-  </div>
 
-  <!-- APP -->
-  <div id="app" class="app hidden">
-    <header class="top">
-      <div class="top__left">
-        <div class="logo">Z</div>
-        <div>
-          <div class="top__name">ZLEVORA</div>
-          <div class="top__tag">Family Ecosystem</div>
-        </div>
-      </div>
 
-      <div class="top__right">
-        <button class="iconbtn" id="menuBtn" aria-label="Open menu">⋯</button>
-      </div>
-    </header>
+<div id="welcome">
 
-    <!-- MENU -->
-    <div id="sheetBackdrop" class="sheetBackdrop hidden"></div>
-    <aside id="sheet" class="sheet hidden" aria-label="Menu">
-      <div class="sheet__head">
-        <div>
-          <div class="sheet__title">Menu</div>
-          <div class="sheet__sub">Everything in one place</div>
-        </div>
-        <button class="iconbtn" id="closeMenu" aria-label="Close menu">✕</button>
-      </div>
+<div class="logo">ZLEVORA</div>
+<p>Smart Family Ecosystem</p>
 
-      <div class="sheet__grid">
-        <button class="sheetItem" data-nav="weekly">
-          <div class="sheetItem__icon">🗓️</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Weekly Report</div>
-            <div class="sheetItem__s">Auto-saved & dated</div>
-          </div>
-        </button>
+</div>
 
-        <button class="sheetItem" data-nav="mother">
-          <div class="sheetItem__icon">👩‍🍼</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Mother</div>
-            <div class="sheetItem__s">Pregnancy • Postpartum • Breastfeeding</div>
-          </div>
-        </button>
 
-        <button class="sheetItem" data-nav="baby">
-          <div class="sheetItem__icon">👶</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Baby</div>
-            <div class="sheetItem__s">Growth • Sleep • Vaccines</div>
-          </div>
-        </button>
 
-        <button class="sheetItem" data-nav="father">
-          <div class="sheetItem__icon">🧔‍♂️</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Father</div>
-            <div class="sheetItem__s">Support • routines • bonding</div>
-          </div>
-        </button>
+<div id="app">
 
-        <button class="sheetItem" data-nav="ai">
-          <div class="sheetItem__icon">✨</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">AI Assistant</div>
-            <div class="sheetItem__s">Plans • summaries • translations</div>
-          </div>
-        </button>
+<h1>ZLEVORA</h1>
 
-        <button class="sheetItem" data-nav="emergency">
-          <div class="sheetItem__icon">🚨</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Emergency</div>
-            <div class="sheetItem__s">Choking • CPR • fainting</div>
-          </div>
-        </button>
 
-        <button class="sheetItem" data-nav="shop">
-          <div class="sheetItem__icon">🛍️</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Smart Shop</div>
-            <div class="sheetItem__s">Products • ratings • search</div>
-          </div>
-        </button>
+<div class="grid">
 
-        <button class="sheetItem" data-nav="community">
-          <div class="sheetItem__icon">💬</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Community</div>
-            <div class="sheetItem__s">Moderated discussion</div>
-          </div>
-        </button>
+<div class="card">
 
-        <button class="sheetItem" data-nav="policies">
-          <div class="sheetItem__icon">🛡️</div>
-          <div class="sheetItem__txt">
-            <div class="sheetItem__t">Safety & Policies</div>
-            <div class="sheetItem__s">Privacy • medical disclaimer</div>
-          </div>
-        </button>
-      </div>
+<h3>Mother</h3>
 
-      <div class="sheet__foot">
-        <button class="btn ghost" id="toggleTheme">Toggle Theme</button>
-        <button class="btn ghost" id="resetSplash">Reset Welcome</button>
-      </div>
-    </aside>
+<button onclick="openPage('mother')">Open</button>
 
-    <main class="wrap">
-      <!-- DASHBOARD -->
-      <section class="card dash" data-page="home">
-        <div class="dash__left">
-          <div class="pill">ZLEVORA • Nude / Clean UI</div>
-          <h1>One calm space for your family.</h1>
-          <p>
-            Clean weekly reports, baby & mother trackers, and an AI assistant that supports
-            real life — in a safe, private way.
-          </p>
+</div>
 
-          <div class="dash__cta">
-            <button class="btn primary" data-nav="weekly">Open Weekly</button>
-            <button class="btn ghost" data-nav="ai">Ask AI</button>
-          </div>
-        </div>
 
-        <div class="dash__right">
-          <div class="miniCards">
-            <button class="miniCard" data-nav="mother">
-              <div class="miniCard__t">Mother</div>
-              <div class="miniCard__s">Track + routines</div>
-            </button>
-            <button class="miniCard" data-nav="baby">
-              <div class="miniCard__t">Baby</div>
-              <div class="miniCard__s">Sleep + growth</div>
-            </button>
-            <button class="miniCard" data-nav="emergency">
-              <div class="miniCard__t">Emergency</div>
-              <div class="miniCard__s">Choking steps</div>
-            </button>
-            <button class="miniCard" data-nav="shop">
-              <div class="miniCard__t">Smart Shop</div>
-              <div class="miniCard__s">Products</div>
-            </button>
-          </div>
-        </div>
-      </section>
 
-      <!-- WEEKLY -->
-      <section class="card page hidden" data-page="weekly">
-        <div class="pageHead">
-          <div>
-            <h2>Weekly Report</h2>
-            <p>Auto-saved. Stored by date. Print-ready later.</p>
-          </div>
-          <div class="pageHead__right">
-            <div class="tiny">Saved: <span id="savedAt">—</span></div>
-          </div>
-        </div>
+<div class="card">
 
-        <div class="grid2">
-          <div class="panel">
-            <h3>Week Info</h3>
-            <label class="field">
-              <span>Week Start</span>
-              <input id="weekStart" type="date" />
-            </label>
-            <label class="field">
-              <span>Week End</span>
-              <input id="weekEnd" type="date" />
-            </label>
-            <label class="field">
-              <span>Mother Name</span>
-              <input id="motherName" type="text" placeholder="Fatima…" />
-            </label>
+<h3>Pregnancy</h3>
 
-            <div class="row">
-              <button class="btn primary" id="saveWeekly">Save Weekly</button>
-              <button class="btn ghost" id="newWeekly">New Week</button>
-            </div>
-          </div>
+<button onclick="openPage('pregnancy')">Open</button>
 
-          <div class="panel">
-            <h3>Weekly Notes</h3>
-            <label class="field">
-              <span>Highlights</span>
-              <textarea id="weeklyHighlights" rows="4" placeholder="Sleep improved… feeding routine…"></textarea>
-            </label>
-            <label class="field">
-              <span>Concerns</span>
-              <textarea id="weeklyConcerns" rows="4" placeholder="Colic… stress…"></textarea>
-            </label>
-          </div>
+</div>
 
-          <div class="panel">
-            <h3>Weekly Timeline</h3>
-            <label class="field">
-              <span>Mon</span><input id="dMon" type="text" placeholder="Milk 2pm… nap…" />
-            </label>
-            <label class="field">
-              <span>Tue</span><input id="dTue" type="text" placeholder="…" />
-            </label>
-            <label class="field">
-              <span>Wed</span><input id="dWed" type="text" placeholder="…" />
-            </label>
-            <label class="field">
-              <span>Thu</span><input id="dThu" type="text" placeholder="…" />
-            </label>
-            <label class="field">
-              <span>Fri</span><input id="dFri" type="text" placeholder="…" />
-            </label>
-            <label class="field">
-              <span>Sat</span><input id="dSat" type="text" placeholder="…" />
-            </label>
-            <label class="field">
-              <span>Sun</span><input id="dSun" type="text" placeholder="…" />
-            </label>
-          </div>
 
-          <div class="panel">
-            <h3>Saved Weeks</h3>
-            <div id="weeksList" class="list"></div>
-          </div>
-        </div>
-      </section>
 
-      <!-- MOTHER -->
-      <section class="card page hidden" data-page="mother">
-        <div class="pageHead">
-          <div>
-            <h2>Mother</h2>
-            <p>Pregnancy • Postpartum • Breastfeeding • Mental wellness</p>
-          </div>
-        </div>
-        <div class="grid3">
-          <div class="panel"><h3>Pregnancy</h3><p class="muted">Weekly tracking + due date + twins options (later).</p></div>
-          <div class="panel"><h3>Postpartum</h3><p class="muted">Recovery checklist + mood & sleep screen (later).</p></div>
-          <div class="panel"><h3>Breastfeeding</h3><p class="muted">Pump logs + stash expiry helpers (later).</p></div>
-        </div>
-      </section>
+<div class="card">
 
-      <!-- BABY -->
-      <section class="card page hidden" data-page="baby">
-        <div class="pageHead">
-          <div>
-            <h2>Baby</h2>
-            <p>Growth • Sleep training • Vaccines • Premature support</p>
-          </div>
-        </div>
-        <div class="grid3">
-          <div class="panel"><h3>Growth</h3><p class="muted">Percentile charts + milestones (later).</p></div>
-          <div class="panel"><h3>Sleep</h3><p class="muted">Smart sleep plan + reports (later).</p></div>
-          <div class="panel"><h3>Vaccines</h3><p class="muted">Country-based schedule (later).</p></div>
-        </div>
-      </section>
+<h3>Postpartum</h3>
 
-      <!-- FATHER -->
-      <section class="card page hidden" data-page="father">
-        <div class="pageHead">
-          <div>
-            <h2>Father</h2>
-            <p>Support mother • bonding • routines • family leadership</p>
-          </div>
-        </div>
-        <div class="grid2">
-          <div class="panel"><h3>Daily Support</h3><p class="muted">Tasks + reminders (later).</p></div>
-          <div class="panel"><h3>Bonding</h3><p class="muted">Activities + tips (later).</p></div>
-        </div>
-      </section>
+<button onclick="openPage('postpartum')">Open</button>
 
-      <!-- AI -->
-      <section class="card page hidden" data-page="ai">
-        <div class="pageHead">
-          <div>
-            <h2>AI Assistant</h2>
-            <p>Legal-safe helper (prototype). Upload later (local-only storage).</p>
-          </div>
-        </div>
+</div>
 
-        <div class="chat">
-          <div class="bubble bot">Tell me what you need and I’ll create a simple plan.</div>
-          <div id="chatLog"></div>
 
-          <div class="chatRow">
-            <input id="chatInput" type="text" placeholder="Type here…" />
-            <button class="btn primary" id="chatSend">Send</button>
-          </div>
-          <div class="tiny muted">Prototype UI فقط — الربط الحقيقي بعدين.</div>
-        </div>
-      </section>
 
-      <!-- EMERGENCY -->
-      <section class="card page hidden" data-page="emergency">
-        <div class="pageHead">
-          <div>
-            <h2>Emergency</h2>
-            <p>Clear steps (basic demo). Always call local emergency services if severe.</p>
-          </div>
-        </div>
+<div class="card">
 
-        <div class="grid2">
-          <div class="panel">
-            <h3>Choking (Baby)</h3>
-            <ol class="ol">
-              <li>Check if baby can cough/cry. If yes → encourage coughing.</li>
-              <li>If not breathing/turning blue → call emergency.</li>
-              <li>5 back blows + 5 chest thrusts (repeat).</li>
-            </ol>
-          </div>
-          <div class="panel">
-            <h3>CPR (Basics)</h3>
-            <ol class="ol">
-              <li>Call emergency + start compressions.</li>
-              <li>Baby: 2 fingers, fast rhythm.</li>
-              <li>Adult: hands center chest.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
+<h3>Breastfeeding</h3>
 
-      <!-- SHOP -->
-      <section class="card page hidden" data-page="shop">
-        <div class="pageHead">
-          <div>
-            <h2>Smart Shop</h2>
-            <p>Same nude theme cards. (Demo catalog)</p>
-          </div>
-        </div>
+<button onclick="openPage('breast')">Open</button>
 
-        <div class="products">
-          <div class="product">
-            <div class="badge">ZLEVORA</div>
-            <div class="pt">MilkCore Pro</div>
-            <div class="ps">Insert bottle → wash → sterilize → mix → warm</div>
-          </div>
-          <div class="product">
-            <div class="badge">ZLEVORA</div>
-            <div class="pt">SilentFlow Pump</div>
-            <div class="ps">Wearable • no hand • ultra quiet</div>
-          </div>
-          <div class="product">
-            <div class="badge">ZLEVORA</div>
-            <div class="pt">Smart Stroller</div>
-            <div class="ps">Lightweight • AI safety alerts</div>
-          </div>
-          <div class="product">
-            <div class="badge">ZLEVORA</div>
-            <div class="pt">Smart Diaper</div>
-            <div class="ps">Wetness + rash risk insights</div>
-          </div>
-        </div>
-      </section>
+</div>
 
-      <!-- COMMUNITY -->
-      <section class="card page hidden" data-page="community">
-        <div class="pageHead">
-          <div>
-            <h2>Community</h2>
-            <p>Moderated threads (demo). You control it later.</p>
-          </div>
-        </div>
 
-        <div class="list">
-          <div class="item">
-            <div class="itemT">Sleep training tips (0–5 months)</div>
-            <div class="itemS">Calm routines + safe guidance</div>
-          </div>
-          <div class="item">
-            <div class="itemT">Twins feeding routine</div>
-            <div class="itemS">Share schedules + notes</div>
-          </div>
-          <div class="item">
-            <div class="itemT">Postpartum emotions</div>
-            <div class="itemS">Supportive resources</div>
-          </div>
-        </div>
-      </section>
 
-      <!-- POLICIES -->
-      <section class="card page hidden" data-page="policies">
-        <div class="pageHead">
-          <div>
-            <h2>Safety & Policies</h2>
-            <p>Privacy + medical disclaimer (starter)</p>
-          </div>
-        </div>
-        <div class="grid2">
-          <div class="panel">
-            <h3>Privacy</h3>
-            <p class="muted">Local storage only for prototype. No selling data. User can request deletion later.</p>
-          </div>
-          <div class="panel">
-            <h3>Medical Disclaimer</h3>
-            <p class="muted">General guidance only. Not a diagnosis. For urgent symptoms call emergency services.</p>
-          </div>
-        </div>
-      </section>
-    </main>
+<div class="card">
 
-    <footer class="bottom">
-      <button class="nav active" data-nav="home">Home</button>
-      <button class="nav" data-nav="weekly">Weekly</button>
-      <button class="nav" data-nav="ai">AI</button>
-      <button class="nav" data-nav="shop">Shop</button>
-      <button class="nav" data-nav="community">Community</button>
-    </footer>
-  </div>
+<h3>Mental Health</h3>
 
-  <script src="app.js"></script>
+<button onclick="openPage('mental')">Open</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Baby</h3>
+
+<button onclick="openPage('baby')">Open</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>AI Assistant</h3>
+
+<button onclick="openPage('ai')">Open</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Smart Shop</h3>
+
+<button onclick="openPage('shop')">Open</button>
+
+</div>
+
+</div>
+
+
+
+<div id="mother" class="section">
+
+<h2>Mother Section</h2>
+
+<p>Pregnancy tips</p>
+
+<p>Health support</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="pregnancy" class="section">
+
+<h2>Pregnancy Progress</h2>
+
+<p>Week 1</p>
+
+<p>Week 2</p>
+
+<p>Week 3</p>
+
+<p>Week 4</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="postpartum" class="section">
+
+<h2>Postpartum Care</h2>
+
+<p>Recovery</p>
+
+<p>Sleep</p>
+
+<p>Nutrition</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="breast" class="section">
+
+<h2>Breastfeeding</h2>
+
+<p>Milk supply</p>
+
+<p>Pumping</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="mental" class="section">
+
+<h2>Mental Health</h2>
+
+<p>Stress support</p>
+
+<p>Emotional health</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="baby" class="section">
+
+<h2>Baby Tracking</h2>
+
+<p>Sleep</p>
+
+<p>Growth</p>
+
+<p>Vaccines</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="ai" class="section">
+
+<h2>AI Assistant</h2>
+
+<input id="question" placeholder="Ask something">
+
+<button onclick="askAI()">Ask</button>
+
+<p id="answer"></p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+<div id="shop" class="section">
+
+<h2>Smart Shop</h2>
+
+<p>Smart Bottle Maker</p>
+
+<p>Milk Storage Pods</p>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+setTimeout(function(){
+
+document.getElementById("welcome").style.display="none"
+
+document.getElementById("app").style.display="block"
+
+},2000)
+
+
+
+function openPage(page){
+
+var s=document.getElementsByClassName("section")
+
+for(var i=0;i<s.length;i++){
+
+s[i].style.display="none"
+
+}
+
+document.getElementById(page).style.display="block"
+
+}
+
+
+
+function back(){
+
+var s=document.getElementsByClassName("section")
+
+for(var i=0;i<s.length;i++){
+
+s[i].style.display="none"
+
+}
+
+}
+
+
+
+function askAI(){
+
+var q=document.getElementById("question").value
+
+document.getElementById("answer").innerText="AI analysing: "+q
+
+}
+
+
+</script>
+
+
 </body>
 </html>
