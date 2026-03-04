@@ -2,268 +2,197 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ZLEVORA</title>
 
 <style>
-:root{
-  --bg:#f6f2ec;
-  --card:#ffffff;
-  --text:#2b2b2b;
-  --muted:#7a6f66;
-  --shadow: 0 10px 30px rgba(0,0,0,0.10);
-  --radius:22px;
-}
+  :root{
+    --bg:#f5efe8;
+    --card: rgba(255,255,255,0.78);
+    --text:#2b2b2b;
+    --muted:#7b7168;
+    --shadow: 0 18px 50px rgba(0,0,0,0.14);
+    --radius:22px;
+  }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Text", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x:hidden;
-}
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Arial,sans-serif;
+    background: radial-gradient(1200px 900px at 50% 20%, #fff9f2 0%, var(--bg) 60%, #efe6dc 100%);
+    color:var(--text);
+  }
 
-/* ===== Splash ===== */
-.splash{
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: radial-gradient(1200px 800px at 50% 30%, #fff8f0 0%, var(--bg) 60%, #efe7dd 100%);
-  z-index:9999;
-}
+  /* ===== Fullscreen Welcome Overlay ===== */
+  .welcome{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: radial-gradient(1200px 900px at 50% 20%, #fff9f2 0%, var(--bg) 65%, #efe6dc 100%);
+    transition: opacity 700ms ease, visibility 700ms ease;
+  }
+  .welcome.hide{ opacity:0; visibility:hidden; }
 
-.splash-inner{
-  width:min(820px, 92vw);
-  text-align:center;
-  padding:34px 20px;
-  transform: translateY(10px);
-  opacity:0;
-  animation: enter 900ms ease-out forwards;
-}
+  .welcomeBox{
+    width:min(920px, 92vw);
+    padding:28px 18px 22px;
+    text-align:center;
+    transform: translateY(10px);
+    opacity:0;
+    animation: enter 800ms ease-out forwards;
+  }
+  @keyframes enter{ to{transform:translateY(0); opacity:1;} }
 
-@keyframes enter{
-  to{transform: translateY(0); opacity:1;}
-}
+  .brand{
+    letter-spacing:.28em;
+    font-weight:700;
+    font-size:14px;
+    color:#6c5f55;
+    margin-bottom:10px;
+  }
+  .big{
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight:750;
+    margin:0 0 10px;
+  }
+  .sub{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size: clamp(14px, 1.8vw, 18px);
+  }
 
-.logo{
-  width:86px;
-  height:86px;
-  margin:0 auto 18px;
-  border-radius:24px;
-  background: linear-gradient(135deg,#e7d8c7,#ffffff);
-  box-shadow: var(--shadow);
-  position:relative;
-  overflow:hidden;
-}
-.logo:before{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.8) 50%, transparent 100%);
-  transform: rotate(25deg) translateX(-120%);
-  animation: shine 1.2s ease-in-out infinite;
-}
-@keyframes shine{
-  0%{transform: rotate(25deg) translateX(-120%);}
-  65%{transform: rotate(25deg) translateX(120%);}
-  100%{transform: rotate(25deg) translateX(120%);}
-}
+  /* iPhone-ish loading bar */
+  .loader{
+    width:220px; height:10px;
+    margin: 0 auto;
+    border-radius:999px;
+    overflow:hidden;
+    background: rgba(0,0,0,0.07);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
+  }
+  .loader span{
+    display:block; height:100%;
+    width:0%;
+    background: linear-gradient(90deg,#d7c3ae,#ffffff,#d7c3ae);
+    border-radius:999px;
+    animation: load 2.3s ease-in-out forwards;
+  }
+  @keyframes load{ 0%{width:0%} 65%{width:80%} 100%{width:100%} }
 
-.brand{
-  letter-spacing:0.25em;
-  font-weight:700;
-  font-size:14px;
-  color:#6c5f55;
-  margin-bottom:8px;
-}
+  /* Soft floating text (premium feel) */
+  .float{
+    display:inline-block;
+    animation: float 2.4s ease-in-out infinite;
+  }
+  @keyframes float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 
-.title{
-  font-size: clamp(26px, 4vw, 44px);
-  font-weight:700;
-  margin:0 0 10px;
-}
+  /* ===== Main Page ===== */
+  .page{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 16px 60px;
+    opacity:0;
+    transform: translateY(10px);
+    transition: all 700ms ease;
+  }
+  .page.show{ opacity:1; transform: translateY(0); }
 
-.subtitle{
-  font-size: clamp(14px, 1.8vw, 18px);
-  color: var(--muted);
-  margin:0 0 22px;
-}
+  .hero{
+    background: var(--card);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    border: 1px solid rgba(255,255,255,0.55);
+  }
 
-.welcome{
-  font-size: clamp(18px, 2.4vw, 26px);
-  font-weight:650;
-  margin:0 0 18px;
-}
+  .topbar{
+    padding:18px 18px 10px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .logoTxt{
+    letter-spacing:.22em;
+    font-weight:800;
+    font-size:18px;
+  }
+  .tagline{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+  }
 
-/* iPhone-like loader */
-.loader{
-  width:190px;
-  height:10px;
-  background: rgba(0,0,0,0.06);
-  margin: 0 auto;
-  border-radius: 999px;
-  overflow:hidden;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
-}
-.loader > span{
-  display:block;
-  height:100%;
-  width:0%;
-  background: linear-gradient(90deg,#d8c5b1,#ffffff,#d8c5b1);
-  border-radius:999px;
-  animation: load 2.4s ease-in-out forwards;
-}
-@keyframes load{
-  0%{width:0%;}
-  60%{width:78%;}
-  100%{width:100%;}
-}
+  .cta{
+    padding:10px 14px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(212, 191, 170, 0.55);
+    color:#3a312a;
+    font-weight:700;
+    cursor:pointer;
+  }
 
-/* Fade out splash */
-.splash.hide{
-  animation: fadeOut 700ms ease-in forwards;
-}
-@keyframes fadeOut{
-  to{opacity:0; visibility:hidden;}
-}
+  /* This shows YOUR app design image */
+  .mockup{
+    width:100%;
+    height:auto;
+    display:block;
+  }
 
-/* ===== App ===== */
-.app{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 34px 18px 60px;
-  opacity:0;
-  transform: translateY(10px);
-  transition: all 700ms ease;
-}
-.app.show{
-  opacity:1;
-  transform: translateY(0);
-}
-
-.header{
-  text-align:center;
-  margin-bottom: 18px;
-}
-.header h1{
-  margin:0;
-  font-size: 34px;
-  letter-spacing:0.18em;
-}
-.header p{
-  margin:10px 0 0;
-  color: var(--muted);
-}
-
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 20px;
-}
-@media (max-width:720px){
-  .grid{grid-template-columns: repeat(2, 1fr);}
-}
-
-.card{
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px 16px;
-  box-shadow: var(--shadow);
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  align-items:flex-start;
-  min-height:110px;
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.14);
-}
-.tag{
-  font-size:12px;
-  color:#8a7e74;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-.name{
-  font-size:18px;
-  font-weight:700;
-}
-.hint{
-  font-size:13px;
-  color: var(--muted);
-  line-height:1.35;
-}
-
-.footer-note{
-  margin-top:16px;
-  text-align:center;
-  color:#9a8f86;
-  font-size:12px;
-}
+  .footer{
+    text-align:center;
+    margin-top:14px;
+    color:#9a8f86;
+    font-size:12px;
+  }
 </style>
 </head>
 
 <body>
 
-<!-- Splash Screen -->
-<section class="splash" id="splash">
-  <div class="splash-inner">
-    <div class="logo" aria-hidden="true"></div>
+<!-- Welcome overlay -->
+<section class="welcome" id="welcome">
+  <div class="welcomeBox">
     <div class="brand">Z L E V O R A</div>
-    <h1 class="title">Smart Family Ecosystem</h1>
-    <p class="subtitle">A future-ready space for mothers, babies, and smart parenting.</p>
-
-    <div class="welcome">Welcome to Zlevora Family</div>
-
-    <div class="loader" aria-label="Loading">
-      <span></span>
-    </div>
+    <h1 class="big"><span class="float">Welcome to Zlevora Family</span></h1>
+    <p class="sub">Unboxing a new future for your family ✨</p>
+    <div class="loader"><span></span></div>
   </div>
 </section>
 
-<!-- App Home -->
-<main class="app" id="app">
-  <div class="header">
-    <h1>ZLEVORA</h1>
-    <p>Smart Family Ecosystem</p>
-  </div>
+<!-- Main page -->
+<main class="page" id="page">
+  <section class="hero">
+    <div class="topbar">
+      <div>
+        <div class="logoTxt">ZLEVORA</div>
+        <div class="tagline">Smart Family Ecosystem</div>
+      </div>
+      <button class="cta" onclick="alert('Next step: login + full screens')">Get Started</button>
+    </div>
 
-  <div class="grid">
-    <div class="card"><div class="tag">Mother</div><div class="name">Mother</div><div class="hint">Pregnancy • Postpartum • Breastfeeding • Mental Health</div></div>
-    <div class="card"><div class="tag">Baby</div><div class="name">Baby</div><div class="hint">Growth • Vaccinations • Sleep • Feeding</div></div>
-    <div class="card"><div class="tag">AI Assistant</div><div class="name">AI Assistant</div><div class="hint">Smart answers, routines, reminders, and guidance</div></div>
-    <div class="card"><div class="tag">Emergency</div><div class="name">Emergency</div><div class="hint">First Aid • CPR • Fever • Choking</div></div>
-    <div class="card"><div class="tag">Community</div><div class="name">Community</div><div class="hint">Moms circle • Support • Tips • Stories</div></div>
-    <div class="card"><div class="tag">Smart Shop</div><div class="name">Smart Shop</div><div class="hint">Devices • Pods • Bundles • Accessories</div></div>
-    <div class="card"><div class="tag">IVF</div><div class="name">IVF</div><div class="hint">Tracking • Guidance • Appointments • Notes</div></div>
-    <div class="card"><div class="tag">Insurance</div><div class="name">Insurance</div><div class="hint">Coverage • Claims • Benefits • Support</div></div>
-    <div class="card"><div class="tag">Spiritual</div><div class="name">Spiritual</div><div class="hint">Du'a • Reminders • Peace • Routine</div></div>
-  </div>
+    <!-- IMPORTANT: اسم الصورة اللي رفعتيه -->
+    <img class="mockup" src="zlevora-ui.jpg" alt="ZLEVORA App Design Preview"/>
+  </section>
 
-  <div class="footer-note">ZLEVORA Web Preview • Next: full screens + database + login</div>
+  <div class="footer">ZLEVORA • Web Preview (Version 1)</div>
 </main>
 
 <script>
-  // Show splash then app
-  const splash = document.getElementById('splash');
-  const app = document.getElementById('app');
+  const welcome = document.getElementById('welcome');
+  const page = document.getElementById('page');
 
-  // مدة شاشة الترحيب (ممكن تغيرينها)
-  const splashDuration = 2600;
+  // مدة الترحيب قبل ما يطلع تصميمك
+  const duration = 2400;
 
   setTimeout(() => {
-    splash.classList.add('hide');
-    app.classList.add('show');
-  }, splashDuration);
+    welcome.classList.add('hide');
+    page.classList.add('show');
+  }, duration);
 </script>
 
 </body>
