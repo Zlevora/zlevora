@@ -1,472 +1,436 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>ZLEVORA • Smart Family Ecosystem</title>
-  <meta name="description" content="ZLEVORA Smart Family Ecosystem — Mother, Baby, Father, AI Assistant, Smart Shop, Community, Inventions, Investors." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZLEVORA</title>
+  <meta name="description" content="ZLEVORA Smart Family Ecosystem" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
-<!-- iPhone-like Welcome (auto fades) -->
-<section class="welcome" id="welcome" aria-hidden="false">
-  <div class="welcomeBox">
-    <div class="welcomeMark">Z</div>
-    <h1 class="welcomeTitle">Welcome to ZLEVORA</h1>
-    <div class="welcomeGlow"></div>
-    <div class="welcomeDots" aria-hidden="true">
-      <span></span><span></span><span></span>
+  <!-- SPLASH -->
+  <div id="splash" class="splash">
+    <div class="splash__glass">
+      <div class="splash__mark">
+        <div class="mark__halo"></div>
+        <div class="mark__disc">Z</div>
+      </div>
+      <div class="splash__title">Welcome to <span class="brand">ZLEVORA</span></div>
+      <div class="splash__sub">Smart Family Ecosystem</div>
+      <div class="splash__dots" aria-label="Loading"><span></span><span></span><span></span></div>
     </div>
   </div>
-</section>
-
-<header class="top">
-  <div class="topLeft">
-    <div class="mark">
-      <div class="markIcon" aria-hidden="true">Z</div>
-      <div>
-        <div class="markName">ZLEVORA</div>
-        <div class="markTag">SMART FAMILY ECOSYSTEM</div>
-      </div>
-    </div>
-  </div>
-
-  <nav class="topNav">
-    <a href="#mother">Mother</a>
-    <a href="#baby">Baby</a>
-    <a href="#father">Father</a>
-    <a href="#ai">AI Assistant</a>
-    <a href="#shop">Smart Shop</a>
-    <a href="#community">Community</a>
-    <a href="#inventions">Inventions</a>
-    <a class="pill" href="#investors">Investors</a>
-  </nav>
-
-  <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
-</header>
-
-<!-- Mobile drawer -->
-<div class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawerHead">
-    <div class="drawerTitle">ZLEVORA</div>
-    <button class="drawerClose" id="drawerClose" aria-label="Close">✕</button>
-  </div>
-  <a href="#mother">Mother</a>
-  <a href="#baby">Baby</a>
-  <a href="#father">Father</a>
-  <a href="#ai">AI Assistant</a>
-  <a href="#shop">Smart Shop</a>
-  <a href="#community">Community</a>
-  <a href="#inventions">Inventions</a>
-  <a href="#investors">Investors</a>
-</div>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="heroGrid">
-      <div class="heroText">
-        <div class="badge">Future-ready • Premium • Simple</div>
-        <h2>One ecosystem for <span class="soft">Mother</span>, <span class="soft">Baby</span>, and <span class="soft">Family</span>.</h2>
-        <p class="lead">
-          ZLEVORA is a smart family platform that connects your app, your devices, and your daily life — beautifully.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn" href="#app">View App Screens</a>
-          <a class="btnGhost" href="#inventions">Explore Inventions</a>
-        </div>
-
-        <div class="kpis">
-          <div class="kpi"><div class="kpiN">6</div><div class="kpiT">Core Modules</div></div>
-          <div class="kpi"><div class="kpiN">50+</div><div class="kpiT">Inventions Ready</div></div>
-          <div class="kpi"><div class="kpiN">AI</div><div class="kpiT">Always On</div></div>
-        </div>
-      </div>
-
-      <div class="heroCard">
-        <div class="phoneFrame">
-          <div class="phoneTop"></div>
-          <div class="phoneScreen">
-            <div class="appLogo">ZLEVORA</div>
-            <div class="appMini">Smart Family System</div>
-            <button class="appBtn">Get Started</button>
-          </div>
-        </div>
-
-        <div class="miniRow">
-          <div class="mini">Mother</div>
-          <div class="mini">Baby</div>
-          <div class="mini">AI</div>
-          <div class="mini">Shop</div>
-          <div class="mini">Community</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- APP -->
-  <section class="section" id="app">
-    <div class="sectionHead">
-      <h3>App Experience</h3>
-      <p class="muted">Full concept screens in your ZLEVORA style (soft ivory + premium glow).</p>
-    </div>
-
-    <div class="tabs" role="tablist" aria-label="App tabs">
-      <button class="tab active" data-tab="mother" role="tab">Mother</button>
-      <button class="tab" data-tab="baby" role="tab">Baby</button>
-      <button class="tab" data-tab="father" role="tab">Father</button>
-      <button class="tab" data-tab="ai" role="tab">AI Assistant</button>
-      <button class="tab" data-tab="shop" role="tab">Smart Shop</button>
-      <button class="tab" data-tab="community" role="tab">Community</button>
-    </div>
-
-    <div class="tabPanels">
-
-      <div class="panel active" id="panel-mother">
-        <div class="cards2">
-          <div class="card">
-            <div class="cardTitle">Pregnancy</div>
-            <div class="cardText">Week-by-week timeline, symptoms, appointments, scan gallery, and personalized reminders.</div>
-            <div class="chips"><span>Checklist</span><span>Appointments</span><span>Nutrition</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Postpartum</div>
-            <div class="cardText">Recovery tracking, mood check-ins, sleep support, and daily plan that adapts to your routine.</div>
-            <div class="chips"><span>Recovery</span><span>Mood</span><span>Sleep</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Breastfeeding</div>
-            <div class="cardText">Smart pumping sessions, milk insights, freezer inventory, and baby feeding analytics.</div>
-            <div class="chips"><span>Pumping</span><span>Milk Vault</span><span>Insights</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Mental Wellness</div>
-            <div class="cardText">Calm mode, guided resets, supportive micro-coaching, and emergency support shortcuts.</div>
-            <div class="chips"><span>Calm</span><span>Coach</span><span>Emergency</span></div>
-          </div>
+  <div id="app" class="app hidden">
+    <header class="top">
+      <div class="top__left">
+        <div class="logo">Z</div>
+        <div>
+          <div class="top__name">ZLEVORA</div>
+          <div class="top__tag">Family Ecosystem</div>
         </div>
       </div>
 
-      <div class="panel" id="panel-baby">
-        <div class="cards2">
-          <div class="card">
-            <div class="cardTitle">Growth</div>
-            <div class="cardText">Weight/height/head charts, milestones, and AI suggestions for next steps.</div>
-            <div class="chips"><span>Charts</span><span>Milestones</span><span>AI Tips</span></div>
+      <div class="top__right">
+        <button class="iconbtn" id="menuBtn" aria-label="Open menu">⋯</button>
+      </div>
+    </header>
+
+    <!-- MENU -->
+    <div id="sheetBackdrop" class="sheetBackdrop hidden"></div>
+    <aside id="sheet" class="sheet hidden" aria-label="Menu">
+      <div class="sheet__head">
+        <div>
+          <div class="sheet__title">Menu</div>
+          <div class="sheet__sub">Everything in one place</div>
+        </div>
+        <button class="iconbtn" id="closeMenu" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="sheet__grid">
+        <button class="sheetItem" data-nav="weekly">
+          <div class="sheetItem__icon">🗓️</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Weekly Report</div>
+            <div class="sheetItem__s">Auto-saved & dated</div>
           </div>
-          <div class="card">
-            <div class="cardTitle">Sleep</div>
-            <div class="cardText">Smart sleep coach + device sync with safe breathing + motion insights.</div>
-            <div class="chips"><span>SleepPad</span><span>SafeBreath</span><span>Coach</span></div>
+        </button>
+
+        <button class="sheetItem" data-nav="mother">
+          <div class="sheetItem__icon">👩‍🍼</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Mother</div>
+            <div class="sheetItem__s">Pregnancy • Postpartum • Breastfeeding</div>
           </div>
-          <div class="card">
-            <div class="cardTitle">Feeding</div>
-            <div class="cardText">Bottle prep, breast milk balance, formula guidance, and allergy watchlist.</div>
-            <div class="chips"><span>MilkCore</span><span>Feeding Hub</span><span>Allergy</span></div>
+        </button>
+
+        <button class="sheetItem" data-nav="baby">
+          <div class="sheetItem__icon">👶</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Baby</div>
+            <div class="sheetItem__s">Growth • Sleep • Vaccines</div>
           </div>
-          <div class="card">
-            <div class="cardTitle">Vaccinations</div>
-            <div class="cardText">Official schedule, reminders, record storage, and clinic notes.</div>
-            <div class="chips"><span>Schedule</span><span>Reminders</span><span>Records</span></div>
+        </button>
+
+        <button class="sheetItem" data-nav="father">
+          <div class="sheetItem__icon">🧔‍♂️</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Father</div>
+            <div class="sheetItem__s">Support • routines • bonding</div>
+          </div>
+        </button>
+
+        <button class="sheetItem" data-nav="ai">
+          <div class="sheetItem__icon">✨</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">AI Assistant</div>
+            <div class="sheetItem__s">Plans • summaries • translations</div>
+          </div>
+        </button>
+
+        <button class="sheetItem" data-nav="emergency">
+          <div class="sheetItem__icon">🚨</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Emergency</div>
+            <div class="sheetItem__s">Choking • CPR • fainting</div>
+          </div>
+        </button>
+
+        <button class="sheetItem" data-nav="shop">
+          <div class="sheetItem__icon">🛍️</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Smart Shop</div>
+            <div class="sheetItem__s">Products • ratings • search</div>
+          </div>
+        </button>
+
+        <button class="sheetItem" data-nav="community">
+          <div class="sheetItem__icon">💬</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Community</div>
+            <div class="sheetItem__s">Moderated discussion</div>
+          </div>
+        </button>
+
+        <button class="sheetItem" data-nav="policies">
+          <div class="sheetItem__icon">🛡️</div>
+          <div class="sheetItem__txt">
+            <div class="sheetItem__t">Safety & Policies</div>
+            <div class="sheetItem__s">Privacy • medical disclaimer</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="sheet__foot">
+        <button class="btn ghost" id="toggleTheme">Toggle Theme</button>
+        <button class="btn ghost" id="resetSplash">Reset Welcome</button>
+      </div>
+    </aside>
+
+    <main class="wrap">
+      <!-- DASHBOARD -->
+      <section class="card dash" data-page="home">
+        <div class="dash__left">
+          <div class="pill">ZLEVORA • Nude / Clean UI</div>
+          <h1>One calm space for your family.</h1>
+          <p>
+            Clean weekly reports, baby & mother trackers, and an AI assistant that supports
+            real life — in a safe, private way.
+          </p>
+
+          <div class="dash__cta">
+            <button class="btn primary" data-nav="weekly">Open Weekly</button>
+            <button class="btn ghost" data-nav="ai">Ask AI</button>
           </div>
         </div>
-      </div>
 
-      <div class="panel" id="panel-father">
-        <div class="cards2">
-          <div class="card">
-            <div class="cardTitle">Dad Dashboard</div>
-            <div class="cardText">Quick overview: baby status, tasks, and what to do now — in one screen.</div>
-            <div class="chips"><span>Tasks</span><span>Now</span><span>Insights</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Family Planner</div>
-            <div class="cardText">Shared calendar, shopping list, baby schedule, and smart reminders for both parents.</div>
-            <div class="chips"><span>Calendar</span><span>List</span><span>Sync</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Home Safety</div>
-            <div class="cardText">Safety checklist + emergency actions + device health alerts.</div>
-            <div class="chips"><span>Alerts</span><span>Checklist</span><span>Emergency</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Support Mode</div>
-            <div class="cardText">AI suggests helpful actions: calm baby, prepare feed, reset routine, sleep shifts.</div>
-            <div class="chips"><span>AI</span><span>Routine</span><span>Guidance</span></div>
+        <div class="dash__right">
+          <div class="miniCards">
+            <button class="miniCard" data-nav="mother">
+              <div class="miniCard__t">Mother</div>
+              <div class="miniCard__s">Track + routines</div>
+            </button>
+            <button class="miniCard" data-nav="baby">
+              <div class="miniCard__t">Baby</div>
+              <div class="miniCard__s">Sleep + growth</div>
+            </button>
+            <button class="miniCard" data-nav="emergency">
+              <div class="miniCard__t">Emergency</div>
+              <div class="miniCard__s">Choking steps</div>
+            </button>
+            <button class="miniCard" data-nav="shop">
+              <div class="miniCard__t">Smart Shop</div>
+              <div class="miniCard__s">Products</div>
+            </button>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="panel" id="panel-ai">
-        <div class="cards2">
-          <div class="card">
-            <div class="cardTitle">AI Assistant</div>
-            <div class="cardText">Ask anything: crying, colic, feeding, sleep, pregnancy symptoms, routines.</div>
-            <div class="chips"><span>Quick Replies</span><span>Guidance</span><span>Calm</span></div>
+      <!-- WEEKLY -->
+      <section class="card page hidden" data-page="weekly">
+        <div class="pageHead">
+          <div>
+            <h2>Weekly Report</h2>
+            <p>Auto-saved. Stored by date. Print-ready later.</p>
           </div>
-          <div class="card">
-            <div class="cardTitle">Emergency Mode</div>
-            <div class="cardText">One-tap: Choking, CPR guide, Fever, Poison help, call shortcuts.</div>
-            <div class="chips"><span>CPR</span><span>Choking</span><span>Fever</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Smart Insights</div>
-            <div class="cardText">Connect devices for auto insights: sleep, breathing, feeding, diaper status.</div>
-            <div class="chips"><span>Devices</span><span>Insights</span><span>Auto</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Privacy</div>
-            <div class="cardText">Local-first options + secure cloud for families. You control what syncs.</div>
-            <div class="chips"><span>Secure</span><span>Control</span><span>Trust</span></div>
+          <div class="pageHead__right">
+            <div class="tiny">Saved: <span id="savedAt">—</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="panel" id="panel-shop">
-        <div class="cards2">
-          <div class="card">
-            <div class="cardTitle">Smart Shop</div>
-            <div class="cardText">ZLEVORA devices + family essentials. Beautiful catalog with bundles and warranty.</div>
-            <div class="chips"><span>Bundles</span><span>Warranty</span><span>Fast</span></div>
+        <div class="grid2">
+          <div class="panel">
+            <h3>Week Info</h3>
+            <label class="field">
+              <span>Week Start</span>
+              <input id="weekStart" type="date" />
+            </label>
+            <label class="field">
+              <span>Week End</span>
+              <input id="weekEnd" type="date" />
+            </label>
+            <label class="field">
+              <span>Mother Name</span>
+              <input id="motherName" type="text" placeholder="Fatima…" />
+            </label>
+
+            <div class="row">
+              <button class="btn primary" id="saveWeekly">Save Weekly</button>
+              <button class="btn ghost" id="newWeekly">New Week</button>
+            </div>
           </div>
-          <div class="card">
-            <div class="cardTitle">Device Setup</div>
-            <div class="cardText">Pair in seconds. The app auto-detects your product and configures it.</div>
-            <div class="chips"><span>Pair</span><span>Auto</span><span>Guide</span></div>
+
+          <div class="panel">
+            <h3>Weekly Notes</h3>
+            <label class="field">
+              <span>Highlights</span>
+              <textarea id="weeklyHighlights" rows="4" placeholder="Sleep improved… feeding routine…"></textarea>
+            </label>
+            <label class="field">
+              <span>Concerns</span>
+              <textarea id="weeklyConcerns" rows="4" placeholder="Colic… stress…"></textarea>
+            </label>
           </div>
-          <div class="card">
-            <div class="cardTitle">Subscription</div>
-            <div class="cardText">Premium AI packs, extended support, and family storage upgrades.</div>
-            <div class="chips"><span>AI+</span><span>Support</span><span>Storage</span></div>
+
+          <div class="panel">
+            <h3>Weekly Timeline</h3>
+            <label class="field">
+              <span>Mon</span><input id="dMon" type="text" placeholder="Milk 2pm… nap…" />
+            </label>
+            <label class="field">
+              <span>Tue</span><input id="dTue" type="text" placeholder="…" />
+            </label>
+            <label class="field">
+              <span>Wed</span><input id="dWed" type="text" placeholder="…" />
+            </label>
+            <label class="field">
+              <span>Thu</span><input id="dThu" type="text" placeholder="…" />
+            </label>
+            <label class="field">
+              <span>Fri</span><input id="dFri" type="text" placeholder="…" />
+            </label>
+            <label class="field">
+              <span>Sat</span><input id="dSat" type="text" placeholder="…" />
+            </label>
+            <label class="field">
+              <span>Sun</span><input id="dSun" type="text" placeholder="…" />
+            </label>
           </div>
-          <div class="card">
-            <div class="cardTitle">Smart Delivery</div>
-            <div class="cardText">Predictive shopping: diapers, formula, wipes — it suggests before you run out.</div>
-            <div class="chips"><span>Predict</span><span>Refill</span><span>Save</span></div>
+
+          <div class="panel">
+            <h3>Saved Weeks</h3>
+            <div id="weeksList" class="list"></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="panel" id="panel-community">
-        <div class="cards2">
-          <div class="card">
-            <div class="cardTitle">Community</div>
-            <div class="cardText">Moms, dads, twins community, verified advice, curated topics.</div>
-            <div class="chips"><span>Topics</span><span>Twins</span><span>Support</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Experts</div>
-            <div class="cardText">Telehealth booking + midwife tips + pediatric Q&A (future module).</div>
-            <div class="chips"><span>Telehealth</span><span>Q&A</span><span>Booking</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Social</div>
-            <div class="cardText">Share milestones and private family moments with control settings.</div>
-            <div class="chips"><span>Private</span><span>Share</span><span>Control</span></div>
-          </div>
-          <div class="card">
-            <div class="cardTitle">Badges</div>
-            <div class="cardText">Progress badges: sleep wins, feeding streaks, calm days, family goals.</div>
-            <div class="chips"><span>Goals</span><span>Badges</span><span>Streaks</span></div>
+      <!-- MOTHER -->
+      <section class="card page hidden" data-page="mother">
+        <div class="pageHead">
+          <div>
+            <h2>Mother</h2>
+            <p>Pregnancy • Postpartum • Breastfeeding • Mental wellness</p>
           </div>
         </div>
-      </div>
+        <div class="grid3">
+          <div class="panel"><h3>Pregnancy</h3><p class="muted">Weekly tracking + due date + twins options (later).</p></div>
+          <div class="panel"><h3>Postpartum</h3><p class="muted">Recovery checklist + mood & sleep screen (later).</p></div>
+          <div class="panel"><h3>Breastfeeding</h3><p class="muted">Pump logs + stash expiry helpers (later).</p></div>
+        </div>
+      </section>
 
-    </div>
-  </section>
+      <!-- BABY -->
+      <section class="card page hidden" data-page="baby">
+        <div class="pageHead">
+          <div>
+            <h2>Baby</h2>
+            <p>Growth • Sleep training • Vaccines • Premature support</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="panel"><h3>Growth</h3><p class="muted">Percentile charts + milestones (later).</p></div>
+          <div class="panel"><h3>Sleep</h3><p class="muted">Smart sleep plan + reports (later).</p></div>
+          <div class="panel"><h3>Vaccines</h3><p class="muted">Country-based schedule (later).</p></div>
+        </div>
+      </section>
 
-  <!-- QUICK MODULE SECTIONS -->
-  <section class="section" id="mother">
-    <div class="sectionHead">
-      <h3>Mother</h3>
-      <p class="muted">Pregnancy → Postpartum → Breastfeeding → Wellness.</p>
-    </div>
-    <div class="featureGrid">
-      <div class="feature"><h4>Pregnancy Tracker</h4><p>Weeks, scans, symptoms, nutrition, appointments.</p></div>
-      <div class="feature"><h4>Twins Mode</h4><p>Two babies tracking with placenta options & insights.</p></div>
-      <div class="feature"><h4>Wellness</h4><p>Calm tools, routines, quick resets, support plan.</p></div>
-      <div class="feature"><h4>Medical Records</h4><p>Store reports, prescriptions, visits, notes.</p></div>
-    </div>
-  </section>
+      <!-- FATHER -->
+      <section class="card page hidden" data-page="father">
+        <div class="pageHead">
+          <div>
+            <h2>Father</h2>
+            <p>Support mother • bonding • routines • family leadership</p>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="panel"><h3>Daily Support</h3><p class="muted">Tasks + reminders (later).</p></div>
+          <div class="panel"><h3>Bonding</h3><p class="muted">Activities + tips (later).</p></div>
+        </div>
+      </section>
 
-  <section class="section" id="baby">
-    <div class="sectionHead">
-      <h3>Baby</h3>
-      <p class="muted">Growth, sleep, feeding, safety — synced with devices.</p>
-    </div>
-    <div class="featureGrid">
-      <div class="feature"><h4>Growth & Milestones</h4><p>Charts + milestones + AI reminders.</p></div>
-      <div class="feature"><h4>Sleep</h4><p>Breath + motion + temperature insights.</p></div>
-      <div class="feature"><h4>Feeding</h4><p>Milk + formula tracking, bottle prep, inventory.</p></div>
-      <div class="feature"><h4>Diaper</h4><p>Auto alerts and routine optimization.</p></div>
-    </div>
-  </section>
+      <!-- AI -->
+      <section class="card page hidden" data-page="ai">
+        <div class="pageHead">
+          <div>
+            <h2>AI Assistant</h2>
+            <p>Legal-safe helper (prototype). Upload later (local-only storage).</p>
+          </div>
+        </div>
 
-  <section class="section" id="father">
-    <div class="sectionHead">
-      <h3>Father</h3>
-      <p class="muted">A dedicated space for dads: actions, tasks, and support.</p>
-    </div>
-    <div class="featureGrid">
-      <div class="feature"><h4>Dad Dashboard</h4><p>What’s happening now + what to do next.</p></div>
-      <div class="feature"><h4>Family Planner</h4><p>Shared calendar and task shifts.</p></div>
-      <div class="feature"><h4>Safety</h4><p>Home checklist + emergency shortcuts.</p></div>
-      <div class="feature"><h4>AI Support Mode</h4><p>AI suggests the best next action.</p></div>
-    </div>
-  </section>
+        <div class="chat">
+          <div class="bubble bot">Tell me what you need and I’ll create a simple plan.</div>
+          <div id="chatLog"></div>
 
-  <section class="section" id="ai">
-    <div class="sectionHead">
-      <h3>AI Assistant</h3>
-      <p class="muted">Always-on advice + emergency mode.</p>
-    </div>
-    <div class="featureGrid">
-      <div class="feature"><h4>Quick Replies</h4><p>“Baby won’t stop crying” → guided steps.</p></div>
-      <div class="feature"><h4>Emergency</h4><p>Choking/CPR/Fever/Poison one tap.</p></div>
-      <div class="feature"><h4>Smart Insights</h4><p>Understands device data: sleep, breath, feeding.</p></div>
-      <div class="feature"><h4>Privacy Controls</h4><p>You control syncing and sharing.</p></div>
-    </div>
-  </section>
+          <div class="chatRow">
+            <input id="chatInput" type="text" placeholder="Type here…" />
+            <button class="btn primary" id="chatSend">Send</button>
+          </div>
+          <div class="tiny muted">Prototype UI فقط — الربط الحقيقي بعدين.</div>
+        </div>
+      </section>
 
-  <section class="section" id="shop">
-    <div class="sectionHead">
-      <h3>Smart Shop</h3>
-      <p class="muted">Premium catalog for ZLEVORA devices + essentials.</p>
-    </div>
-    <div class="shopGrid">
-      <div class="product"><div class="pTop">Smart Stroller</div><div class="pSub">AI Navigation</div><button class="pBtn">View</button></div>
-      <div class="product"><div class="pTop">AI Baby Monitor</div><div class="pSub">Vision + Audio</div><button class="pBtn">View</button></div>
-      <div class="product"><div class="pTop">Milk Storage System</div><div class="pSub">Smart Vault</div><button class="pBtn">View</button></div>
-      <div class="product"><div class="pTop">Smart Diaper</div><div class="pSub">Live Alerts</div><button class="pBtn">View</button></div>
-    </div>
-  </section>
+      <!-- EMERGENCY -->
+      <section class="card page hidden" data-page="emergency">
+        <div class="pageHead">
+          <div>
+            <h2>Emergency</h2>
+            <p>Clear steps (basic demo). Always call local emergency services if severe.</p>
+          </div>
+        </div>
 
-  <section class="section" id="community">
-    <div class="sectionHead">
-      <h3>Community</h3>
-      <p class="muted">Support + topics + experts (future-ready).</p>
-    </div>
-    <div class="featureGrid">
-      <div class="feature"><h4>Twins Community</h4><p>Talk to parents of twins and get real tips.</p></div>
-      <div class="feature"><h4>Topics</h4><p>Colic, sleep training, breastfeeding, postpartum.</p></div>
-      <div class="feature"><h4>Experts</h4><p>Telehealth booking and expert Q&A.</p></div>
-      <div class="feature"><h4>Social</h4><p>Private family sharing with permissions.</p></div>
-    </div>
-  </section>
+        <div class="grid2">
+          <div class="panel">
+            <h3>Choking (Baby)</h3>
+            <ol class="ol">
+              <li>Check if baby can cough/cry. If yes → encourage coughing.</li>
+              <li>If not breathing/turning blue → call emergency.</li>
+              <li>5 back blows + 5 chest thrusts (repeat).</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>CPR (Basics)</h3>
+            <ol class="ol">
+              <li>Call emergency + start compressions.</li>
+              <li>Baby: 2 fingers, fast rhythm.</li>
+              <li>Adult: hands center chest.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-  <!-- INVENTIONS -->
-  <section class="section" id="inventions">
-    <div class="sectionHead">
-      <h3>ZLEVORA Inventions (Demo Board)</h3>
-      <p class="muted">Names are clean + premium. (You can replace/add later.)</p>
-    </div>
+      <!-- SHOP -->
+      <section class="card page hidden" data-page="shop">
+        <div class="pageHead">
+          <div>
+            <h2>Smart Shop</h2>
+            <p>Same nude theme cards. (Demo catalog)</p>
+          </div>
+        </div>
 
-    <div class="board">
-      <!-- 50 demo inventions -->
-      <div class="inv"><div class="invN">01</div><div class="invT">MilkCore Pro</div><div class="invS">Smart milk system</div></div>
-      <div class="inv"><div class="invN">02</div><div class="invT">SilentFlow</div><div class="invS">Wearable pump</div></div>
-      <div class="inv"><div class="invN">03</div><div class="invT">AirNest</div><div class="invS">Smart crib</div></div>
-      <div class="inv"><div class="invN">04</div><div class="invT">UVStash</div><div class="invS">UV + dry + store</div></div>
-      <div class="inv"><div class="invN">05</div><div class="invT">SafeBreath</div><div class="invS">Rescue device</div></div>
-      <div class="inv"><div class="invN">06</div><div class="invT">SleepPad</div><div class="invS">Smart mattress</div></div>
-      <div class="inv"><div class="invN">07</div><div class="invT">PulseBand</div><div class="invS">Baby health band</div></div>
-      <div class="inv"><div class="invN">08</div><div class="invT">TinyWave</div><div class="invS">Temp monitor</div></div>
-      <div class="inv"><div class="invN">09</div><div class="invT">AuraBand</div><div class="invS">Calm + sleep</div></div>
-      <div class="inv"><div class="invN">10</div><div class="invT">DiaperSense</div><div class="invS">Auto alerts</div></div>
+        <div class="products">
+          <div class="product">
+            <div class="badge">ZLEVORA</div>
+            <div class="pt">MilkCore Pro</div>
+            <div class="ps">Insert bottle → wash → sterilize → mix → warm</div>
+          </div>
+          <div class="product">
+            <div class="badge">ZLEVORA</div>
+            <div class="pt">SilentFlow Pump</div>
+            <div class="ps">Wearable • no hand • ultra quiet</div>
+          </div>
+          <div class="product">
+            <div class="badge">ZLEVORA</div>
+            <div class="pt">Smart Stroller</div>
+            <div class="ps">Lightweight • AI safety alerts</div>
+          </div>
+          <div class="product">
+            <div class="badge">ZLEVORA</div>
+            <div class="pt">Smart Diaper</div>
+            <div class="ps">Wetness + rash risk insights</div>
+          </div>
+        </div>
+      </section>
 
-      <div class="inv"><div class="invN">11</div><div class="invT">MilkVault</div><div class="invS">Cold smart storage</div></div>
-      <div class="inv"><div class="invN">12</div><div class="invT">FeedingHub</div><div class="invS">All-in-one station</div></div>
-      <div class="inv"><div class="invN">13</div><div class="invT">SmartStroller AI</div><div class="invS">AI navigation</div></div>
-      <div class="inv"><div class="invN">14</div><div class="invT">AI Baby Monitor</div><div class="invS">Vision + audio</div></div>
-      <div class="inv"><div class="invN">15</div><div class="invT">MomHub</div><div class="invS">Wellness device</div></div>
-      <div class="inv"><div class="invN">16</div><div class="invT">BottleMaker</div><div class="invS">Smart prep</div></div>
-      <div class="inv"><div class="invN">17</div><div class="invT">WarmDock</div><div class="invS">Precision warming</div></div>
-      <div class="inv"><div class="invN">18</div><div class="invT">SterileBox</div><div class="invS">UV sterilizer</div></div>
-      <div class="inv"><div class="invN">19</div><div class="invT">CalmLight</div><div class="invS">Sleep lighting</div></div>
-      <div class="inv"><div class="invN">20</div><div class="invT">SafeRoom</div><div class="invS">Home safety hub</div></div>
+      <!-- COMMUNITY -->
+      <section class="card page hidden" data-page="community">
+        <div class="pageHead">
+          <div>
+            <h2>Community</h2>
+            <p>Moderated threads (demo). You control it later.</p>
+          </div>
+        </div>
 
-      <div class="inv"><div class="invN">21</div><div class="invT">TwinSync</div><div class="invS">Twins mode</div></div>
-      <div class="inv"><div class="invN">22</div><div class="invT">GrowScan</div><div class="invS">Growth scanner</div></div>
-      <div class="inv"><div class="invN">23</div><div class="invT">CrySense</div><div class="invS">Cry analyzer</div></div>
-      <div class="inv"><div class="invN">24</div><div class="invT">FeedMap</div><div class="invS">Feeding patterns</div></div>
-      <div class="inv"><div class="invN">25</div><div class="invT">SleepCoach</div><div class="invS">AI routine</div></div>
-      <div class="inv"><div class="invN">26</div><div class="invT">TempGuard</div><div class="invS">Room climate</div></div>
-      <div class="inv"><div class="invN">27</div><div class="invT">AllergyWatch</div><div class="invS">Allergy tracker</div></div>
-      <div class="inv"><div class="invN">28</div><div class="invT">BottleTrack</div><div class="invS">Bottle logs</div></div>
-      <div class="inv"><div class="invN">29</div><div class="invT">MilkLabel</div><div class="invS">Smart labels</div></div>
-      <div class="inv"><div class="invN">30</div><div class="invT">HydraMom</div><div class="invS">Hydration coach</div></div>
+        <div class="list">
+          <div class="item">
+            <div class="itemT">Sleep training tips (0–5 months)</div>
+            <div class="itemS">Calm routines + safe guidance</div>
+          </div>
+          <div class="item">
+            <div class="itemT">Twins feeding routine</div>
+            <div class="itemS">Share schedules + notes</div>
+          </div>
+          <div class="item">
+            <div class="itemT">Postpartum emotions</div>
+            <div class="itemS">Supportive resources</div>
+          </div>
+        </div>
+      </section>
 
-      <div class="inv"><div class="invN">31</div><div class="invT">MindReset</div><div class="invS">Calm sessions</div></div>
-      <div class="inv"><div class="invN">32</div><div class="invT">EmergencyKit</div><div class="invS">One tap</div></div>
-      <div class="inv"><div class="invN">33</div><div class="invT">CPR Guide</div><div class="invS">Step-by-step</div></div>
-      <div class="inv"><div class="invN">34</div><div class="invT">FeverGuard</div><div class="invS">Fever monitoring</div></div>
-      <div class="inv"><div class="invN">35</div><div class="invT">PoisonHelp</div><div class="invS">Emergency</div></div>
-      <div class="inv"><div class="invN">36</div><div class="invT">NightNanny</div><div class="invS">Night routine</div></div>
-      <div class="inv"><div class="invN">37</div><div class="invT">BottleDock</div><div class="invS">Dry + store</div></div>
-      <div class="inv"><div class="invN">38</div><div class="invT">StrollerGuard</div><div class="invS">Anti-theft</div></div>
-      <div class="inv"><div class="invN">39</div><div class="invT">CarSeatSync</div><div class="invS">Safety data</div></div>
-      <div class="inv"><div class="invN">40</div><div class="invT">SmartDiaper Pro</div><div class="invS">Ultra sensor</div></div>
+      <!-- POLICIES -->
+      <section class="card page hidden" data-page="policies">
+        <div class="pageHead">
+          <div>
+            <h2>Safety & Policies</h2>
+            <p>Privacy + medical disclaimer (starter)</p>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="panel">
+            <h3>Privacy</h3>
+            <p class="muted">Local storage only for prototype. No selling data. User can request deletion later.</p>
+          </div>
+          <div class="panel">
+            <h3>Medical Disclaimer</h3>
+            <p class="muted">General guidance only. Not a diagnosis. For urgent symptoms call emergency services.</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <div class="inv"><div class="invN">41</div><div class="invT">MilkBalance</div><div class="invS">Milk insights</div></div>
-      <div class="inv"><div class="invN">42</div><div class="invT">FormulaMind</div><div class="invS">Formula guide</div></div>
-      <div class="inv"><div class="invN">43</div><div class="invT">BabyShield</div><div class="invS">Protection hub</div></div>
-      <div class="inv"><div class="invN">44</div><div class="invT">NurseryHub</div><div class="invS">Control center</div></div>
-      <div class="inv"><div class="invN">45</div><div class="invT">QuietMode</div><div class="invS">Noise care</div></div>
-      <div class="inv"><div class="invN">46</div><div class="invT">StrollerAuto</div><div class="invS">Self drive</div></div>
-      <div class="inv"><div class="invN">47</div><div class="invT">MilkPods</div><div class="invS">Storage pods</div></div>
-      <div class="inv"><div class="invN">48</div><div class="invT">TwinCam</div><div class="invS">Dual monitor</div></div>
-      <div class="inv"><div class="invN">49</div><div class="invT">CareBell</div><div class="invS">Family alerts</div></div>
-      <div class="inv"><div class="invN">50</div><div class="invT">Zlevora Cart</div><div class="invS">Smart trolley</div></div>
-    </div>
+    <footer class="bottom">
+      <button class="nav active" data-nav="home">Home</button>
+      <button class="nav" data-nav="weekly">Weekly</button>
+      <button class="nav" data-nav="ai">AI</button>
+      <button class="nav" data-nav="shop">Shop</button>
+      <button class="nav" data-nav="community">Community</button>
+    </footer>
+  </div>
 
-    <div class="note">
-      تبين نخليها 100 اختراع؟ تقدرين تضيفين 50 بلوك زيادة بنفس الشكل (أنا أسويلج جاهز بعدين).
-    </div>
-  </section>
-
-  <!-- INVESTORS -->
-  <section class="section" id="investors">
-    <div class="sectionHead">
-      <h3>Investor Preview</h3>
-      <p class="muted">A premium one-page pitch preview for your link.</p>
-    </div>
-
-    <div class="investGrid">
-      <div class="investCard">
-        <h4>Vision</h4>
-        <p>ZLEVORA becomes the “Apple of family tech” — a global ecosystem that grows with every home.</p>
-      </div>
-      <div class="investCard">
-        <h4>Moat</h4>
-        <p>App + devices + data intelligence + premium design language — unified experience.</p>
-      </div>
-      <div class="investCard">
-        <h4>Business</h4>
-        <p>Devices, bundles, subscriptions, extended support, and smart replenishment.</p>
-      </div>
-      <div class="investCard">
-        <h4>Roadmap</h4>
-        <p>Web demo → Flutter app → Device prototypes → Retail presence → Global expansion.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="fLeft">
-      <div class="fBrand">ZLEVORA</div>
-      <div class="fTag">Smart Family Ecosystem</div>
-    </div>
-    <div class="fRight">
-      <a href="#top">Back to top</a>
-    </div>
-  </footer>
-
-</main>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
